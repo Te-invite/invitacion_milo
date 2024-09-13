@@ -5,11 +5,10 @@ import SectionTitle from '../components/SectionTitle.vue';
 import Timer from '../components/Timer/Timer.vue';
 import ImageSlider from '../components/ImageSlider.vue';
 import SectionLugar from '../components/SectionLugar.vue';
-import SectionFooterVue from '../components/SectionFooter.vue';
 import Boton from '../components/Boton.vue';
 import logo from '../assets/img/logo.png'
 import CronogramaFamiliaVue from '../components/CronogramaFamilia.vue';
-
+import SectionRedes from '../components/SectionRedes.vue';
 export default {
     name: 'InvitacionFamilia',
     components: {
@@ -21,7 +20,7 @@ export default {
         ImageSlider,
         SectionLugar,
         Boton,
-        SectionFooterVue
+        SectionRedes 
     },
     data() {
         return {
@@ -34,37 +33,35 @@ export default {
 }
 </script>
 <template>
-    <div class="container_friend container">
+    <div class="container_family container">
         <IconBarraSuperiorVue class="barra_sup" />
-        <div class="box_friends">
+        <div class="box_family">
             <CarrouselVue />
         </div>
-        <div class="content_friend">
+        <div class="content_family">
             <SectionTitle />
             <Timer />
-            <p class="text__friends">{{ detalle }}</p>
+            <p class="text__family">{{ detalle }}</p>
             <CronogramaFamiliaVue />
             <SectionLugar/>
             <ImageSlider/>
-            <p class="text__friends">{{ text }}</p>
+            <p class="text__family">{{ text }}</p>
             <Boton label="VER MIS FOTOS" customClass="btn-mayor" @click="togglePopUp()" />
         </div>
-        <div class="section__redes">
-            <img :src="logo" class="img_logo"  alt="">
-        </div>
+        <SectionRedes/> 
     </div>
 </template>
 <style>
-.container_friend {
+.container_family {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 }
 
-.content_friend {
+.content_family {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -81,7 +78,7 @@ export default {
 
 }
 
-.box_friends {
+.box_family {
     height: auto;
     width: 100vw;
     margin: 6% 0;
@@ -90,23 +87,12 @@ export default {
     justify-content: center;
 }
 
-.text__friends {
+.text__family {
     margin-top: 1rem;
     color: var(--color__font-buttom);
     font-family: TobiPro-medium;
     font-size: var(--font-size-16);
-}
-.section__redes{
-    width:100%;
-    display:flex;
-    flex-direction: column;
-    margin-top:1rem;
-    align-items: center;
-    justify-content: center;
-}
-.img_logo{
-    width:100px;
-    height:auto;
+    text-align: center;
 }
 
 </style>

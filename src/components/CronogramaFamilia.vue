@@ -27,7 +27,7 @@ export default {
         <div class="content_cronograma">
             <h1 class="title_cronog">{{ title }}</h1>
             <Actividades2/>
-            <p class="text__friends">{{ detalle2 }}</p>
+            <p class="text__family">{{ detalle2 }}</p>
             <div></div>
             <div class="barra_warning">
                 <IconBarraInferior class="barra barra2" />

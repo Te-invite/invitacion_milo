@@ -6,9 +6,9 @@ import Timer from '../components/Timer/Timer.vue';
 import CronogramaFriends from '../components/CronogramaFriends.vue';
 import ImageSlider from '../components/ImageSlider.vue';
 import SectionLugar from '../components/SectionLugar.vue';
-import SectionFooterVue from '../components/SectionFooter.vue';
 import Boton from '../components/Boton.vue';
-import logo from '../assets/img/logo.png'
+import SectionRedes from '../components/SectionRedes.vue';
+
 export default {
     name: 'InvitacionAmigos',
     components: {
@@ -20,14 +20,12 @@ export default {
         ImageSlider,
         SectionLugar,
         Boton,
-        SectionFooterVue
+        SectionRedes
     },
     data() {
         return {
             detalle: 'JUEVES 19 DE SEPTIEMBRE DE 16 A 18 HS.',
-            
-            text:'MIRÁ TODAS MIS FOTOS EN LA EXCAVADORA AQUÍ',
-            logo
+            text:'MIRÁ TODAS MIS FOTOS EN LA EXCAVADORA AQUÍ',            
         }
     },
     
@@ -49,12 +47,7 @@ export default {
             <p class="text__friends">{{ text }}</p>
             <Boton label="VER MIS FOTOS" customClass="btn-mayor" @click="togglePopUp()" />
         </div>
-        <div class="section__redes">
-            <img :src="logo" class="img_logo"  alt="">
-            
-        </div>
-        <SectionFooterVue class="footer"/>     
-        
+        <SectionRedes/>        
     </div>
 </template>
 <style>
@@ -100,22 +93,5 @@ export default {
     font-size: var(--font-size-16);
     text-align: center;
 }
-.img_logo{
-    width:80px;
-    height:auto;
-}
-.img_logo > img{
-    width:100%;
-    height:100%;
-}
-.section__redes{
-    margin-top:3rem;
-    width:100%;
-    height:auto;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    align-items:center;
-    padding-bottom: .5rem;
-}
+
 </style>
