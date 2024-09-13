@@ -1,13 +1,13 @@
 <script>
 import IconEscavadoraVue from '../components/icon/IconEscavadora.vue';
 import IconBarraInferior from './icon/IconBarraInferior.vue';
-import Actividades from './Actividades.vue';
+import Actividades2 from './Actividades2.vue';
 export default {
     name: 'CronogramaFriends',
     components: {
         IconEscavadoraVue,
         IconBarraInferior,
-        Actividades
+        Actividades2
     },
     data() {
         return {
@@ -26,7 +26,7 @@ export default {
         </div>
         <div class="content_cronograma">
             <h1 class="title_cronog">{{ title }}</h1>
-            <Actividades/>
+            <Actividades2/>
             <p class="text__friends">{{ detalle2 }}</p>
             <div></div>
             <div class="barra_warning">

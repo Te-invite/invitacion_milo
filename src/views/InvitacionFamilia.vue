@@ -3,12 +3,12 @@ import CarrouselVue from '../components/Carrousel.vue';
 import IconBarraSuperiorVue from '../components/icon/IconBarraSuperior.vue';
 import SectionTitle from '../components/SectionTitle.vue';
 import Timer from '../components/Timer/Timer.vue';
-import CronogramaFriends from '../components/CronogramaFriends.vue';
 import ImageSlider from '../components/ImageSlider.vue';
 import SectionLugar from '../components/SectionLugar.vue';
 import SectionFooterVue from '../components/SectionFooter.vue';
 import Boton from '../components/Boton.vue';
 import logo from '../assets/img/logo.png'
+import CronogramaFamiliaVue from '../components/CronogramaFamilia.vue';
 
 export default {
     name: 'InvitacionFamilia',
@@ -17,7 +17,7 @@ export default {
         CarrouselVue,
         SectionTitle,
         Timer,
-        CronogramaFriends,
+        CronogramaFamiliaVue,
         ImageSlider,
         SectionLugar,
         Boton,
@@ -26,7 +26,6 @@ export default {
     data() {
         return {
             detalle: 'JUEVES 19 DE SEPTIEMBRE DE 16 A 18 HS.',
-            
             text:'MIRÁ TODAS MIS FOTOS EN LA EXCAVADORA AQUÍ',
             logo
         }
@@ -44,7 +43,7 @@ export default {
             <SectionTitle />
             <Timer />
             <p class="text__friends">{{ detalle }}</p>
-            <CronogramaFriends />
+            <CronogramaFamiliaVue />
             <SectionLugar/>
             <ImageSlider/>
             <p class="text__friends">{{ text }}</p>
