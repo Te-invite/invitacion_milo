@@ -74,9 +74,10 @@ export default {
   <div class="contentSlide">
     <div class="wrapper">
       <i ref="left" id="left" @click="scroll('left')" class="fa-solid fa-chevron-left"></i>
-      <div class="carousel" ref="carousel" @mousedown="dragStart" @touchstart="dragStart" @mousemove="dragging"
-        @touchmove="dragging" @mouseup="dragStop" @mouseleave="dragStop" @touchend="dragStop">
-        <img v-for="(image, index) in images" :key="index" :src="image.img" alt="" draggable="false">
+      <div class="carousel" ref="carousel" @mouseup="dragStop" @mouseleave="dragStop" @touchend="dragStop">
+        <img v-for="(image, index) in images" 
+        :key="index" :src="image.img" 
+        alt="" draggable="false">
 
       </div>
       <i ref="right" id="right" @click="scroll('right')" class="fa-solid fa-chevron-right icon"></i>
@@ -92,6 +93,7 @@ export default {
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
+  margin-top:1rem;
 
 }
 

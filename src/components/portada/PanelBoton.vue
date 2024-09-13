@@ -35,7 +35,7 @@ export default {
             </button>
             </div>
             <div class="background_btn">
-                <button type="button" class="btn btn_control">
+                <button type="button" class="btn btn_control" @click="enterFamily()">
                 <span class="content_txt_btn">
                     <p class="txt__btn">{{ opcion2 }}</p>
                 </span>

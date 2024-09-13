@@ -20,25 +20,14 @@ export default {
     height:25px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     position:relative;
     background: rgba(128, 128, 128, .7);
     bottom:0;
     left:0;
-    margin-top:2rem;
 }
-.text_desarrolladores {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-family: Montserrat;
-    margin-top: 1rem;
-    position: absolute;
-    
-}
+
 
 .dev1 {
     color: var(--font-light);

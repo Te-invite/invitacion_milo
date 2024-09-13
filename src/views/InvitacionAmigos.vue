@@ -8,7 +8,7 @@ import ImageSlider from '../components/ImageSlider.vue';
 import SectionLugar from '../components/SectionLugar.vue';
 import SectionFooterVue from '../components/SectionFooter.vue';
 import Boton from '../components/Boton.vue';
-
+import logo from '../assets/img/logo.png'
 export default {
     name: 'InvitacionAmigos',
     components: {
@@ -27,7 +27,7 @@ export default {
             detalle: 'JUEVES 19 DE SEPTIEMBRE DE 16 A 18 HS.',
             
             text:'MIRÁ TODAS MIS FOTOS EN LA EXCAVADORA AQUÍ',
-            
+            logo
         }
     },
     
@@ -49,8 +49,10 @@ export default {
             <p class="text__friends">{{ text }}</p>
             <Boton label="¿CÓMO LLEGAR?" customClass="btn-mayor" @click="togglePopUp()" />
         </div>
+        <div class="section__redes">
+            <img :src="logo" class="img_logo"  alt="">
+        </div>
         
-        <SectionFooterVue/>
     </div>
 </template>
 <style>

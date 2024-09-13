@@ -40,7 +40,6 @@ export default {
 .sectio_lugar {
     width: 100%;
     height: 100%;
-    margin-top: .5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

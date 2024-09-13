@@ -27,7 +27,7 @@ export default {
 <template>
   
   <div class="container_carrousel">
-    <div id="carouselExampleFade" class="carousel slide carousel-fade carousel_photo" data-bs-ride="carousel" data-bs-interval="2500">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade carousel_photo" data-bs-ride="carousel" data-bs-interval="2500" >
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img :src="foto1" class="d-block w-100" alt="...">
