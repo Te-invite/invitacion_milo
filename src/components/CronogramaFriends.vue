@@ -68,8 +68,8 @@ export default {
 }
 .esc {
     position: relative;
-    top:-40%;
     z-index: 1;
+    bottom:2rem;
 }
 
 .title_cronog {

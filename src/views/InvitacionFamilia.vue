@@ -47,7 +47,7 @@ export default {
             <SectionLugar/>
             <ImageSlider/>
             <p class="text__friends">{{ text }}</p>
-            <Boton label="¿CÓMO LLEGAR?" customClass="btn-mayor" @click="togglePopUp()" />
+            <Boton label="VER MIS FOTOS" customClass="btn-mayor" @click="togglePopUp()" />
         </div>
         <div class="section__redes">
             <img :src="logo" class="img_logo"  alt="">
@@ -62,9 +62,6 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding-bottom: 1rem;
 }
 
 .content_friend {

@@ -47,25 +47,24 @@ export default {
             <SectionLugar/>
             <ImageSlider/>
             <p class="text__friends">{{ text }}</p>
-            <Boton label="¿CÓMO LLEGAR?" customClass="btn-mayor" @click="togglePopUp()" />
+            <Boton label="VER MIS FOTOS" customClass="btn-mayor" @click="togglePopUp()" />
         </div>
         <div class="section__redes">
             <img :src="logo" class="img_logo"  alt="">
+            
         </div>
+        <SectionFooterVue class="footer"/>     
         
     </div>
 </template>
 <style>
 .container_friend {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding-bottom: 2rem;
 }
 
 .content_friend {
@@ -99,7 +98,24 @@ export default {
     color: var(--color__font-buttom);
     font-family: TobiPro-medium;
     font-size: var(--font-size-16);
+    text-align: center;
 }
-
-
+.img_logo{
+    width:80px;
+    height:auto;
+}
+.img_logo > img{
+    width:100%;
+    height:100%;
+}
+.section__redes{
+    margin-top:3rem;
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    padding-bottom: .5rem;
+}
 </style>

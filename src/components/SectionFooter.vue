@@ -20,7 +20,7 @@ export default {
     height:25px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     position:relative;
     background: rgba(128, 128, 128, .7);

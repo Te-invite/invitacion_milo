@@ -11,7 +11,7 @@ export default {
         infoBtn: '¿CÓMO LLEGAR?',
         modalTitle: 'Cómo llegar a la Fiesta',
         map: 'ABRIR APP',
-        mapUrl:'https://maps.app.goo.gl/RMnUo7bMcJN1auvZ9'
+        mapUrl:'https://maps.app.goo.gl/Lz8eu8t8MmzoLQSRA'
         };
     }, 
     methods:{
@@ -30,6 +30,7 @@ export default {
         </template>
         <div class="modal-body">
             <div class="map-container">
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10639.955521609454!2d-60.1009674!3d-38.0265963!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9592313fa2c85eff%3A0x5b1253cccbb79323!2sEstadio%20de%20Independencia!5e1!3m2!1ses-419!2sar!4v1726248999629!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
         <template #footer>
@@ -53,7 +54,7 @@ export default {
 }
 .map{
     width:260px;
-    height:auto;
+    height:250px;
 }
 @media(max-width:320px) {   
     

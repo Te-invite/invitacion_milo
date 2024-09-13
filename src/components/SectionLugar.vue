@@ -10,7 +10,8 @@ export default {
     },
     data() {
         return {
-            lugar: 'LA CASITA DE ALICIA CLUB D. INDEPENDENCIA',
+            lugar: 'LA CASITA DE ALICIA',
+            lugar2:'CLUB D. INDEPENDENCIA',
             cartelWarning,
             popup: false
         }
@@ -25,7 +26,10 @@ export default {
 <template>
     <div>
         <div class="sectio_lugar">
-            <h1 class="title__lugar">{{ lugar }}</h1>
+            <span class="section_lugar__title">
+                <h1 class="title__lugar">{{ lugar }}</h1>
+                <h1 class="title__lugar">{{ lugar2 }}</h1>
+            </span>
             <div class="content_lugar">
                 <img :src="cartelWarning" alt="cartel">
                 <div class="container__button">
@@ -44,13 +48,18 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top:25%;
 }
-
+.section_lugar__title{
+    width:100%;
+    margin:.5rem 0;
+}
 .title__lugar {
     font-family: TobiPro-heavy;
     font-size: var(--font-size-24);
     color: var(--color__font_timer);
     text-align: center;
+    line-height:1rem;
 }
 
 .content_lugar {
