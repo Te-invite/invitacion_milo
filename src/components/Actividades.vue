@@ -35,19 +35,17 @@ export default {
                         <span class="line"></span>
                     </div>
                     <div>
-                        <h4 class="timer">{{ hora2 }}</h4>
-                        <h4 class="itinerario">{{ detalle2 }}</h4>
+                        <h4 class="timer timer2">{{ hora2 }}</h4>
+                        <h4 class="itinerario itinerario2">{{ detalle2 }}</h4>
                     </div>
                 </div>
                 <div class="cronograma__data">
                     <div>
-                        <h4 class="timer">{{ hora3 }}</h4>
-                        <h4 class="itinerario">{{ detalle3 }}</h4>
+                        <h4 class="timer ">{{ hora3 }}</h4>
+                        <h4 class="itinerario ">{{ detalle3 }}</h4>
                     </div>
-
                     <div>
                         <span class="rouder"></span>
-
                     </div>
                 </div>
             </div>
@@ -77,12 +75,21 @@ export default {
     font-family: TobiPro-regular;
     color: var(--color__font_timer_detalle);
     font-size: 1.2rem;
+    text-align:right;
 }
 
 .timer {
     font-family: TobiPro-regular;
     color: black;
     font-size: 16px;
+    text-align:right;
+}
+.itinerario2 {
+    text-align:left;
+}
+
+.timer2 {
+    text-align:left;
 }
 
 .rouder {

@@ -263,4 +263,10 @@
     width:100vw;
     height:59px;
 }
+@media (min-width: 1025px) {
+    #barra_inf{
+        min-width:100vw;
+        height:auto;
+    }
+}
 </style>

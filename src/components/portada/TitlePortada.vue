@@ -36,4 +36,9 @@ export default {
     font-size: 1.3rem;
     line-height: 100%;
 }
+@media (min-width: 1025px) {
+    .title_home{
+        margin-top:.5rem;
+    }
+}
 </style>

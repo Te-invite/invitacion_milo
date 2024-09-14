@@ -21,7 +21,6 @@ export default {
         <div class="overlay"></div>
         <div class="content_home">
             <TitlePortada />
-            
             <div class="box_home">
                 <PanelBoton/>
             </div>
@@ -42,7 +41,6 @@ export default {
     align-items: center;
     justify-content: center;
     position: relative;
-    
     z-index: 0;
 }
 
@@ -83,5 +81,20 @@ export default {
     width:100%;
     position:relative;
 }
-
+@media (min-width: 1025px) {
+    .container_home{
+        min-width:100vw;
+        min-height:100%;
+    }
+    .overlay{
+        min-width:100vw;
+        min-height:100%;
+    }
+    .barra_sup {
+        top:-15%;
+    }
+    .barra_inf{
+        bottom:-26%;
+    }
+}
 </style>

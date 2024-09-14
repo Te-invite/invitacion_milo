@@ -293,4 +293,10 @@ export default{
     width:100vw; 
     height:100px;
 }
+@media (min-width: 1025px) {
+    #barra_sup{
+        min-width:100vw;
+        height:auto;
+    }
+}
 </style>

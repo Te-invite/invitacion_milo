@@ -1,8 +1,16 @@
 <script>
 //Imágenes
-import carrusel1 from '../assets/img/portada/Milo(14).jpg';
-import carrusel2 from "../assets/img/portada/Milo(4).jpg";
-import carrusel3 from "../assets/img/portada/Milo(35).jpg";
+import carrusel1 from '../assets/img/carrusel/Milo(2).jpg';
+import carrusel2 from '../assets/img/carrusel/Milo(5).jpg';
+import carrusel3 from '../assets/img/carrusel/Milo(11).jpg';
+import carrusel4 from '../assets/img/carrusel/Milo(21).jpg';
+import carrusel5 from '../assets/img/carrusel/Milo(24).jpg';
+import carrusel6 from '../assets/img/carrusel/Milo(27).jpg';
+import carrusel7 from '../assets/img/carrusel/Milo(34).jpg';
+import carrusel8 from '../assets/img/carrusel/Milo(39).jpg';
+import carrusel9 from '../assets/img/carrusel/Milo(41).jpg';
+import carrusel10 from '../assets/img/carrusel/Milo(43).jpg';
+import carrusel11 from '../assets/img/carrusel/Milo(50).jpg';
 
 export default {
   data() {
@@ -10,7 +18,15 @@ export default {
       images: [
         { img: carrusel1 },
         { img: carrusel2 },
-        { img: carrusel3 }
+        { img: carrusel3 },
+        { img: carrusel4 },
+        { img: carrusel5 },
+        { img: carrusel6 },
+        { img: carrusel7 },
+        { img: carrusel8 },
+        { img: carrusel9 },
+        { img: carrusel10 },
+        { img: carrusel11 }
       ],
       isDragStart: false,
       isDragging: false,

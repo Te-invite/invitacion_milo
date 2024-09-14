@@ -29,6 +29,11 @@ export default {
             logo
         }
     },
+    methods: {
+        enterGalery() {
+            this.$router.push({ name: 'Galeria' });
+        }
+    }
     
 }
 </script>
@@ -46,7 +51,7 @@ export default {
             <SectionLugar/>
             <ImageSlider/>
             <p class="text__family">{{ text }}</p>
-            <Boton label="VER MIS FOTOS" customClass="btn-mayor" @click="togglePopUp()" />
+            <Boton label="VER MIS FOTOS" customClass="btn-mayor" @click="enterGalery()" />
         </div>
         <SectionRedes/> 
     </div>
@@ -91,8 +96,16 @@ export default {
     margin-top: 1rem;
     color: var(--color__font-buttom);
     font-family: TobiPro-medium;
-    font-size: var(--font-size-16);
+    font-size: var(--font-size-24);
     text-align: center;
+}
+@media (min-width: 1025px) {
+    .barra_sup {
+        top:-15%;
+    }
+    .box_family{
+        margin:0;
+    }
 }
 
 </style>

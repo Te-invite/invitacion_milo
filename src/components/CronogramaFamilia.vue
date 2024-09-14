@@ -86,5 +86,14 @@ export default {
     flex-direction: column;
     align-items: center;
 }
-
+@media (min-width: 1025px) {
+    .barra_custom{
+        height: 40px;
+        min-width: 100vw;
+    }
+    .barra2{
+        height: 40px;
+        min-width: 100vw;
+    }
+}
 </style>

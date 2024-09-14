@@ -295,7 +295,7 @@
     width: 135px;
     height: 84px;
     position: relative;
-    animation: movimiento 25s linear infinite;
+    animation: movimiento 25s linear forwards;
 }
 
 /* Animación */
@@ -304,16 +304,16 @@
         transform: translateX(100vw); /* Empieza fuera de la pantalla por la derecha */
     }
     25% {
-        transform: translateX(-130px); /* Llega al centro de la pantalla */
+        transform: translateX(0px); /* Llega al centro de la pantalla */
     }
     50% {
-        transform: translateX(-130px) rotateY(180deg); /* Gira 180 grados en el centro */
+        transform: translateX(-90px) rotateY(180deg); /* Gira 180 grados en el centro */
     }
     75% {
         transform: translateX(100vw) rotateY(180deg); /* Se mueve hacia la derecha, pero ya rotado */
     }
     100% {
-        transform: translateX(300px) rotate(0deg); /* Vuelve a su estado original */
+        transform: translateX(0) rotate(0deg); /* Vuelve a su estado original */
     }
 }
 
