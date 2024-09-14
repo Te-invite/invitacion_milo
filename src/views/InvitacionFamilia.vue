@@ -46,7 +46,9 @@ export default {
         <div class="content_family">
             <SectionTitle />
             <Timer2 />
-            <p class="text__family">{{ detalle }}</p>
+            <span class="container__text_family">
+                <p class="text__family">{{ detalle }}</p>
+            </span>
             <CronogramaFamiliaVue />
             <SectionLugar/>
             <ImageSlider/>
@@ -91,7 +93,9 @@ export default {
     flex-direction: column;
     justify-content: center;
 }
-
+.container__text_family{
+    width:320px;
+}
 .text__family {
     margin-top: 1rem;
     color: var(--color__font-buttom);

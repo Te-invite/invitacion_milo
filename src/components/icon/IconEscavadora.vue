@@ -295,26 +295,24 @@
     width: 135px;
     height: 84px;
     position: relative;
-    animation: movimiento 25s linear forwards;
+    animation: movimientoExcavadora 15s linear forwards;
 }
 
-/* Animación */
-@keyframes movimiento {
-    0% {
-        transform: translateX(100vw); /* Empieza fuera de la pantalla por la derecha */
-    }
-    25% {
-        transform: translateX(0px); /* Llega al centro de la pantalla */
-    }
-    50% {
-        transform: translateX(-90px) rotateY(180deg); /* Gira 180 grados en el centro */
-    }
-    75% {
-        transform: translateX(100vw) rotateY(180deg); /* Se mueve hacia la derecha, pero ya rotado */
-    }
-    100% {
-        transform: translateX(0) rotate(0deg); /* Vuelve a su estado original */
-    }
+@keyframes movimientoExcavadora {
+  0% {
+    transform: translateX(0); /* Inicio desde el centro */
+  }
+  25% {
+    transform: translateX(-100vw); /* Movimiento a la izquierda fuera de la vista */
+  }
+  50% {
+    transform: translateX(-100vw) rotateY(180deg); /* Movimiento hacia la derecha fuera de la vista */
+  }
+  75% {
+    transform: translateX(0) rotateY(180deg); /* Regreso al centro */
+  }
+  100% {
+    transform: translateX(0); /* Ciclo completo */
+  }
 }
-
 </style>

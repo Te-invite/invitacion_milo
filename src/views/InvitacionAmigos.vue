@@ -44,7 +44,9 @@ export default {
         <div class="content_friend">
             <SectionTitle />
             <Timer />
-            <p class="text__friends">{{ detalle }}</p>
+            <span class="container__text_friends">
+                <p class="text__friends">{{ detalle }}</p>
+            </span>
             <CronogramaFriends />
             <SectionLugar/>
             <ImageSlider/>
@@ -89,7 +91,9 @@ export default {
     flex-direction: column;
     justify-content: center;
 }
-
+.container__text_friends{
+    width:320px;
+}
 .text__friends {
     margin-top: 1rem;
     color: var(--color__font-buttom);
