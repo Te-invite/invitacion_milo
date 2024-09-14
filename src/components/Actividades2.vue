@@ -3,7 +3,7 @@ export default {
     name: 'Actividades',
     data() {
         return {
-            hora1: '18:30hs a 20hs',
+            hora1: '18:00hs a 20hs',
             hora2: '18:30hs',
             detalle1: 'Familia y amigos',
             detalle2: 'Maquillaje Artístico'

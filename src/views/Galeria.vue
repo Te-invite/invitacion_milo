@@ -9,10 +9,10 @@ import foto07 from '../assets/img/galeria/Milo(12).jpg';
 import foto08 from '../assets/img/galeria/Milo(13).jpg';
 import foto09 from '../assets/img/galeria/Milo(15).jpg';
 import foto010 from '../assets/img/galeria/Milo(17).jpg';
-import foto011 from '../assets/img/galeria/Milo(19).jpg';
-import foto012 from '../assets/img/galeria/Milo(20).jpg';
-import foto013 from '../assets/img/galeria/Milo(22).jpg';
-import foto014 from '../assets/img/galeria/Milo(23).jpg';
+import foto011 from '../assets/img/galeria/Milo(16).jpg';
+import foto012 from '../assets/img/galeria/Milo(26).jpg';
+import foto013 from '../assets/img/galeria/Milo(29).jpg';
+import foto014 from '../assets/img/galeria/Milo(33).jpg';
 import foto015 from '../assets/img/galeria/Milo(28).jpg';
 import foto016 from '../assets/img/galeria/Milo(31).jpg';
 import foto017 from '../assets/img/galeria/Milo(32).jpg';
@@ -20,9 +20,9 @@ import foto018 from '../assets/img/galeria/Milo(38).jpg';
 import foto019 from '../assets/img/galeria/Milo(42).jpg';
 import foto020 from '../assets/img/galeria/Milo(44).jpg';
 import foto021 from '../assets/img/galeria/Milo(47).jpg';
-import foto022 from '../assets/img/galeria/Milo(51).jpg';
-import foto023 from '../assets/img/galeria/Milo(54).jpg';
-import foto024 from '../assets/img/galeria/Milo(56).jpg';
+import foto022 from '../assets/img/galeria/Milo(25).jpg';
+import foto023 from '../assets/img/galeria/Milo(46).jpg';
+import foto024 from '../assets/img/galeria/Milo(25).jpg';
 export default {
     name:'Galeria',
     data(){

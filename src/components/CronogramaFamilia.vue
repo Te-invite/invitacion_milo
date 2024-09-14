@@ -70,7 +70,7 @@ export default {
 }
 .esc {
     position: relative;
-    top:-50%;
+    top:-20px;
     z-index: 1;
 }
 

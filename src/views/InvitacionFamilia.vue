@@ -2,7 +2,7 @@
 import CarrouselVue from '../components/Carrousel.vue';
 import IconBarraSuperiorVue from '../components/icon/IconBarraSuperior.vue';
 import SectionTitle from '../components/SectionTitle.vue';
-import Timer from '../components/Timer/Timer.vue';
+import Timer2 from '../components/Timer/Timer2.vue';
 import ImageSlider from '../components/ImageSlider.vue';
 import SectionLugar from '../components/SectionLugar.vue';
 import Boton from '../components/Boton.vue';
@@ -15,7 +15,7 @@ export default {
         IconBarraSuperiorVue,
         CarrouselVue,
         SectionTitle,
-        Timer,
+        Timer2,
         CronogramaFamiliaVue,
         ImageSlider,
         SectionLugar,
@@ -24,7 +24,7 @@ export default {
     },
     data() {
         return {
-            detalle: 'JUEVES 19 DE SEPTIEMBRE DE 16 A 18 HS.',
+            detalle: 'JUEVES 19 DE SEPTIEMBRE DE 18 A 20 HS.',
             text:'MIRÁ TODAS MIS FOTOS EN LA EXCAVADORA AQUÍ',
             logo
         }
@@ -45,7 +45,7 @@ export default {
         </div>
         <div class="content_family">
             <SectionTitle />
-            <Timer />
+            <Timer2 />
             <p class="text__family">{{ detalle }}</p>
             <CronogramaFamiliaVue />
             <SectionLugar/>
