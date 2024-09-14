@@ -24,7 +24,7 @@ export default {
     },
     data() {
         return {
-            detalle: 'JUEVES 19 DE SEPTIEMBRE DE 16 A 17 HS.',
+            detalle: 'JUEVES 19 DE SEPTIEMBRE DE 16 A 18 HS.',
             text:'MIRÁ TODAS MIS FOTOS EN LA EXCAVADORA AQUÍ',            
         }
     },

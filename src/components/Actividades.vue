@@ -5,7 +5,7 @@ export default {
         return {
             hora1: '16:00hs',
             hora2: '16:30hs',
-            hora3: '18:00hs',
+            hora3: '17:00hs',
             detalle1: 'Recepción',
             detalle2: 'Clase de Yoga',
             detalle3: 'Maquillaje Artístico'
