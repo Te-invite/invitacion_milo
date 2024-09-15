@@ -1,4 +1,6 @@
 <script>
+import { ref, getDownloadURL } from "firebase/storage";
+import {storage} from '../firebase.js'; 
 import IconBarraInferiorVue from '../components/icon/IconBarraInferior.vue';
 import IconBarraSuperiorVue from '../components/icon/IconBarraSuperior.vue';
 import TitlePortada from '../components/portada/TitlePortada.vue';
@@ -12,11 +14,31 @@ export default {
         TitlePortada,
         PanelBoton,
         
+    },
+    data() {
+        return {
+            backgroundImageUrl: '',  // Inicialmente vacío
+        };
+    },
+    mounted() {
+        this.loadBackgroundImage();
+    },
+    methods: {
+        async loadBackgroundImage() {
+            try {
+                // Cambia el path según la estructura en tu Firebase Storage
+                const imageRef = ref(storage, 'invitacion_milo/Milo_45.jpg');
+                const url = await getDownloadURL(imageRef);
+                this.backgroundImageUrl = url;  // Asignamos la URL a la variable de datos
+            } catch (error) {
+                console.error("Error fetching background image:", error);
+            }
+        }
     }
 }
 </script>
 <template>
-    <div class="container_home container">
+    <div class="container_home container"  :style="{ backgroundImage: `url(${backgroundImageUrl})`}">
         <IconBarraSuperiorVue class="barra_sup" />
         <div class="overlay"></div>
         <div class="content_home">
@@ -31,7 +53,7 @@ export default {
 </template>
 <style>
 .container_home {
-    background-image: url('../assets/img/Milo_45.jpg');
+    /**background-image: url('../assets/img/Milo_45.jpg');**/
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;

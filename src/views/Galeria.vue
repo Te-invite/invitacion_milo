@@ -1,108 +1,99 @@
 <script>
-import foto01 from '../assets/img/galeria/Milo(3).jpg';
-import foto02 from '../assets/img/galeria/Milo(6).jpg';
-import foto03 from '../assets/img/galeria/Milo(7).jpg';
-import foto04 from '../assets/img/galeria/Milo(8).jpg';
-import foto05 from '../assets/img/galeria/Milo(9).jpg';
-import foto06 from '../assets/img/galeria/Milo(10).jpg';
-import foto07 from '../assets/img/galeria/Milo(12).jpg';
-import foto08 from '../assets/img/galeria/Milo(13).jpg';
-import foto09 from '../assets/img/galeria/Milo(15).jpg';
-import foto010 from '../assets/img/galeria/Milo(17).jpg';
-import foto011 from '../assets/img/galeria/Milo(16).jpg';
-import foto012 from '../assets/img/galeria/Milo(26).jpg';
-import foto013 from '../assets/img/galeria/Milo(29).jpg';
-import foto014 from '../assets/img/galeria/Milo(33).jpg';
-import foto015 from '../assets/img/galeria/Milo(28).jpg';
-import foto016 from '../assets/img/galeria/Milo(31).jpg';
-import foto017 from '../assets/img/galeria/Milo(32).jpg';
-import foto018 from '../assets/img/galeria/Milo(38).jpg';
-import foto019 from '../assets/img/galeria/Milo(42).jpg';
-import foto020 from '../assets/img/galeria/Milo(44).jpg';
-import foto021 from '../assets/img/galeria/Milo(47).jpg';
-import foto022 from '../assets/img/galeria/Milo(25).jpg';
-import foto023 from '../assets/img/galeria/Milo(46).jpg';
-import foto024 from '../assets/img/galeria/Milo(25).jpg';
+import { ref, getDownloadURL } from "firebase/storage";
+import { storage } from "../firebase.js";
+
 export default {
     name:'Galeria',
     data(){
         return{
-            images:[
-                {img:foto01},
-                {img:foto02},
-                {img:foto03 },
-                {img:foto04},
-                {img:foto05 },
-                {img:foto06 },
-                {img:foto07 },
-                {img:foto08 },
-                {img:foto09 },
-                {img:foto010 },
-                {img:foto011 },
-                {img:foto012 },
-                {img:foto013 },
-                {img:foto014 },
-                {img:foto015 },
-                {img:foto016 },
-                {img:foto017 },
-                {img:foto018 },
-                {img:foto019 },
-                {img:foto020 },
-                {img:foto021 },
-                {img:foto022 },
-                {img:foto023 },
-                {img:foto024 }
-
-        ],
-        selectedImage: null 
+            imageUrls: [],       
+            selectedImage: null 
         }
     },
+    mounted() {
+    this.loadSpecificImages();
+  },
     methods: {
+        async loadSpecificImages() {
+      const imageNames = [
+        "Milo(3).jpg",
+        "Milo(6).jpg",
+        "Milo(7).jpg",
+        "Milo(8).jpg",
+        "Milo(9).jpg",
+        "Milo(10).jpg",
+        "Milo(12).jpg",
+        "Milo(13).jpg",
+        "Milo(15).jpg",
+        "Milo(17).jpg",
+        "Milo(16).jpg",
+        "Milo(26).jpg",
+        "Milo(29).jpg",
+        "Milo(33).jpg",
+        "Milo(28).jpg",
+        "Milo(31).jpg",
+        "Milo(32).jpg",
+        "Milo(38).jpg",
+        "Milo(42).jpg",
+        "Milo(44).jpg",
+        "Milo(47).jpg",
+        "Milo(25).jpg",
+        "Milo(46).jpg",
+        "Milo(25).jpg"
+      ];
+      const imageFolder = "invitacion_milo";
+      try {
+        const urlPromises = imageNames.map((imageName) => {
+          const imageRef = ref(storage, `${imageFolder}/${imageName}`);
+          return getDownloadURL(imageRef);
+        });
+        this.imageUrls = await Promise.all(urlPromises); 
+      } catch (error) {
+        console.error("Error al cargar las imágenes específicas:", error);
+      }
+
+    },
         // Método para abrir el modal con la imagen seleccionada
-        enlargeImage(image) {
-            this.selectedImage = image;
+        enlargeImage(imageUrl) {
+            this.selectedImage = imageUrl;
             // Abre el modal de Bootstrap
             const modal = new bootstrap.Modal(document.getElementById('imageModal'));
             modal.show();
         }
     }
-
-
-
 }
 </script>
 <template>
     <div class="container">
-        <!-- Título de la galería -->
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <h1 class="title_galeria">Galería de fotos</h1>
-            </div>
-        </div>
-
-        <!-- Se genera una fila por cada imagen -->
-        <div class="row">
-            <div class="col-4 mb-4" v-for="(image, index) in images" :key="index" >
-                <img  :src="image.img" class="rounded img-thumbnail" alt="" @click="enlargeImage(image.img)">
-            </div> 
-        </div>
-
-        <!-- Modal de Bootstrap para mostrar la imagen agrandada -->
-        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Mostrar la imagen seleccionada en el modal -->
-                        <img :src="selectedImage" class="img-fluid" alt="Imagen agrandada">
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Título de la galería -->
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <h1 class="title_galeria">Galería de fotos</h1>
+      </div>
     </div>
+
+    <!-- Fila con las imágenes -->
+    <div class="row">
+      <div class="col-4 mb-4" v-for="(image, index) in imageUrls" :key="index">
+        <img v-lazy="image" class="rounded img-thumbnail" alt="" @click="enlargeImage(image)" />
+      </div>
+    </div>
+
+    <!-- Modal de Bootstrap para mostrar la imagen agrandada -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Mostrar la imagen seleccionada en el modal -->
+            <img :src="selectedImage" class="img-fluid" alt="Imagen agrandada" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <style>
 .container{

@@ -1,43 +1,50 @@
 <script>
-//Imágenes
-import carrusel1 from '../assets/img/carrusel/Milo(2).jpg';
-import carrusel2 from '../assets/img/carrusel/Milo(5).jpg';
-import carrusel3 from '../assets/img/carrusel/Milo(11).jpg';
-import carrusel4 from '../assets/img/carrusel/Milo(21).jpg';
-import carrusel5 from '../assets/img/carrusel/Milo(24).jpg';
-import carrusel6 from '../assets/img/carrusel/Milo(27).jpg';
-import carrusel7 from '../assets/img/carrusel/Milo(34).jpg';
-import carrusel8 from '../assets/img/carrusel/Milo(39).jpg';
-import carrusel9 from '../assets/img/carrusel/Milo(41).jpg';
-import carrusel10 from '../assets/img/carrusel/Milo(43).jpg';
-import carrusel11 from '../assets/img/carrusel/Milo(50).jpg';
+import { ref, getDownloadURL } from "firebase/storage";
+import { storage } from "../firebase";
 
 export default {
   data() {
     return {
-      images: [
-        { img: carrusel1 },
-        { img: carrusel2 },
-        { img: carrusel3 },
-        { img: carrusel4 },
-        { img: carrusel5 },
-        { img: carrusel6 },
-        { img: carrusel7 },
-        { img: carrusel8 },
-        { img: carrusel9 },
-        { img: carrusel10 },
-        { img: carrusel11 }
-      ],
+      imageUrls: [],
       isDragStart: false,
       isDragging: false,
       prevPageX: 0,
       prevScrollLeft: 0,
       positionDiff: 0,
-      currentIndex: 0, // Agregado para trackear el índice actual
-      autoScrollInterval: null // Intervalo para el auto-scroll
+      currentIndex: 0, 
+      autoScrollInterval: null 
     };
   },
+  mounted() {
+    this.loadSpecificImages();
+  },
   methods: {
+    async loadSpecificImages() {
+      const imageNames = [
+        "Milo(2).jpg",
+        "Milo(5).jpg",
+        "Milo(11).jpg",
+        "Milo(21).jpg",
+        "Milo(24).jpg",
+        "Milo(27).jpg",
+        "Milo(34).jpg",
+        "Milo(39).jpg",
+        "Milo(41).jpg",
+        "Milo(43).jpg",
+        "Milo(50).jpg"
+      ];
+      const imageFolder = "invitacion_milo";
+      try {
+        const urlPromises = imageNames.map((imageName) => {
+          const imageRef = ref(storage, `${imageFolder}/${imageName}`);
+          return getDownloadURL(imageRef);
+        });
+        this.imageUrls = await Promise.all(urlPromises); 
+      } catch (error) {
+        console.error("Error al cargar las imágenes específicas:", error);
+      }
+
+    },
     showHideIcons() {
       const carousel = this.$refs.carousel;
       const scrollWidth = carousel.scrollWidth - carousel.clientWidth;
@@ -91,8 +98,8 @@ export default {
     <div class="wrapper">
       <i ref="left" id="left" @click="scroll('left')" class="fa-solid fa-chevron-left"></i>
       <div class="carousel" ref="carousel" @mouseup="dragStop" @mouseleave="dragStop" @touchend="dragStop">
-        <img v-for="(image, index) in images" 
-        :key="index" :src="image.img" 
+        <img v-for="(url, index) in imageUrls" 
+        :key="index" v-lazy="url"
         alt="" draggable="false">
 
       </div>
